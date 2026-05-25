@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started — Keystone Lead Speed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── CONTACT-SPECIFIC ───────────────────────────────── */
+
+    .contact-layout {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* left side info */
+    .contact-info { position: sticky; top: 88px; }
+
+    .contact-info .eyebrow { margin-bottom: 12px; }
+    .contact-info h1 { margin-bottom: 20px; }
+    .contact-info .body-text { margin-bottom: 40px; }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-bdr);
+      border-radius: var(--radius);
+    }
+
+    .detail-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--blue-lt);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .detail-label {
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-lt);
+      margin-bottom: 3px;
+    }
+
+    .detail-value {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .detail-value strong { color: var(--white); font-weight: 500; }
+
+    /* form card */
+    .form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-bdr);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+    }
+
+    .form-card-header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .form-card-header .eyebrow { margin-bottom: 8px; }
+
+    .form-card-header h2 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .form-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      padding-top: 8px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      font-size: 1rem;
+      padding: 16px;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: rgba(138,154,170,0.5);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 20px;
+    }
+
+    .form-success.visible { display: block; }
+
+    .success-icon {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .form-success h3 {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 24px 80px;
+      }
+      .contact-info { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Keystone Lead Speed" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta active">Get Started</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Get Started →</a>
+  </div>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-layout">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <p class="eyebrow">Start Your Free Trial</p>
+      <h1 class="heading-xl">Let's Get You <span class="accent">Connected.</span></h1>
+      <p class="body-text">Fill out the form and we'll reach out within 24 hours to get you set up. First month is completely free. No setup charge. No commitment.</p>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="detail-dot"></div>
+          <div>
+            <div class="detail-label">Response Time</div>
+            <div class="detail-value">We'll reach out <strong>within 24 hours</strong> of your request</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-dot"></div>
+          <div>
+            <div class="detail-label">Setup Time</div>
+            <div class="detail-value">Most clients are <strong>live within one business day</strong></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-dot"></div>
+          <div>
+            <div class="detail-label">What You Need</div>
+            <div class="detail-value">Just your website URL. <strong>We handle everything else.</strong></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-dot"></div>
+          <div>
+            <div class="detail-label">Direct Contact</div>
+            <div class="detail-value">
+              <strong>keystoneleadspeed@gmail.com</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <p class="eyebrow">Free Trial Request</p>
+        <h2>Tell Us About Your Business</h2>
+      </div>
+
+      <div id="formBody" class="form-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="businessName">Business Name</label>
+          <input type="text" id="businessName" name="businessName" placeholder="Smith's Roofing LLC" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(814) 555-0123" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@smithsroofing.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website URL</label>
+          <input type="url" id="website" name="website" placeholder="https://smithsroofing.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="platform">Website Platform</label>
+          <select id="platform" name="platform">
+            <option value="" disabled selected>Select your platform</option>
+            <option value="wordpress">WordPress</option>
+            <option value="wix">Wix</option>
+            <option value="squarespace">Squarespace</option>
+            <option value="webflow">Webflow</option>
+            <option value="custom">Custom Built</option>
+            <option value="unsure">Not Sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="trade">Trade / Service Type</label>
+          <select id="trade" name="trade">
+            <option value="" disabled selected>What type of work do you do?</option>
+            <option value="roofing">Roofing</option>
+            <option value="hvac">HVAC</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="electrical">Electrical</option>
+            <option value="concrete">Concrete</option>
+            <option value="siding">Siding & Gutters</option>
+            <option value="landscaping">Landscaping</option>
+            <option value="general">General Contracting</option>
+            <option value="other">Other Home Service</option>
+          </select>
+        </div>
+
+        <div class="form-submit">
+          <button type="button" class="btn btn-primary" id="submitBtn">Request Free Trial</button>
+          <p class="form-note">By submitting you agree to be contacted about your trial request. No spam, ever. View our <a href="privacy.html" style="color: var(--blue-lt);">Privacy Policy</a>.</p>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="formSuccess" class="form-success">
+        <div class="success-icon">✓</div>
+        <h3>Request Received</h3>
+        <p>We'll reach out within 24 hours to get you set up. Check your phone — we may call directly.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Keystone Lead Speed &copy; 2025</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+      <div class="footer-copy">Built in Pennsylvania. Made for the trades.</div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    // Basic form submit handler
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const required = ['firstName', 'lastName', 'businessName', 'phone', 'website'];
+      let allFilled = true;
+
+      required.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) {
+          el.style.borderColor = 'rgba(220,80,80,0.6)';
+          allFilled = false;
+        } else {
+          el.style.borderColor = '';
+        }
+      });
+
+      if (!allFilled) return;
+
+      // Collect data
+      const formData = {
+        firstName:    document.getElementById('firstName').value,
+        lastName:     document.getElementById('lastName').value,
+        businessName: document.getElementById('businessName').value,
+        phone:        document.getElementById('phone').value,
+        email:        document.getElementById('email').value,
+        website:      document.getElementById('website').value,
+        platform:     document.getElementById('platform').value,
+        trade:        document.getElementById('trade').value,
+      };
+
+      // TODO: wire to your backend or email service
+      console.log('Trial request:', formData);
+
+      // Show success
+      document.getElementById('formBody').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+    });
+  </script>
+</body>
+</html>
