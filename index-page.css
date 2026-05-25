@@ -18,9 +18,9 @@
 .hero-logo-bg {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 47%;
   transform: translate(-50%, -52%);
-  width: min(1400px, 130vw);   /* large enough to fill hero */
+  width: min(2000px, 180vw);   /* large enough to fill hero */
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
