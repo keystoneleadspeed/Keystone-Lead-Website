@@ -10,69 +10,161 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .legal-layout {
-      max-width: 760px;
+    .legal-wrap {
+      max-width: 860px;
       margin: 0 auto;
-      padding: 72px 40px 100px;
+      padding: 80px 40px 100px;
     }
-    .legal-layout .eyebrow { margin-bottom: 12px; }
-    .legal-layout h1 { margin-bottom: 8px; }
+    .legal-wrap h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
     .legal-updated {
-      font-size: 0.8rem;
-      color: rgba(154,170,187,0.5);
-      margin-bottom: 56px;
-      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 48px;
     }
-    .legal-section { margin-bottom: 40px; }
-    .legal-section h2 {
+    .legal-wrap h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin: 40px 0 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .legal-wrap h3 {
       font-family: var(--font-head);
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.05em;
       color: var(--blue-lt);
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--faint);
+      margin: 24px 0 8px;
     }
-    .legal-section p {
+    .legal-wrap p {
       font-size: 0.92rem;
       color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 12px;
+      line-height: 1.78;
+      margin-bottom: 16px;
     }
-    .legal-section p strong { color: var(--white); font-weight: 600; }
-    .legal-section ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin: 12px 0;
+    .legal-wrap ul {
+      margin: 0 0 16px 0;
+      padding-left: 24px;
     }
-    .legal-section ul li {
+    .legal-wrap ul li {
       font-size: 0.92rem;
       color: var(--muted);
+      line-height: 1.78;
+      margin-bottom: 8px;
+    }
+    .legal-wrap a {
+      color: var(--blue-lt);
+      text-decoration: underline;
+    }
+    .legal-wrap strong { color: var(--white); }
+    .toc {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc p {
+      font-family: var(--font-head);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .toc ol li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .toc ol li a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--blue-lt); }
+    .summary-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      color: var(--white);
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .summary-box p {
+      font-size: 0.88rem;
+      margin-bottom: 12px;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+    }
+    .data-table th {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+      vertical-align: top;
       line-height: 1.6;
-      padding-left: 16px;
-      position: relative;
     }
-    .legal-section ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--blue-lt);
-      font-size: 0.8rem;
+    .data-table tr:last-child td { border-bottom: none; }
+    .yes { color: #4a90d9; font-weight: 600; }
+    .no { color: rgba(154,170,187,0.4); }
+    .legal-footer-note {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.78rem;
+      color: rgba(154,170,187,0.35);
+      font-style: italic;
     }
-    @media (max-width: 640px) {
-      .legal-layout { padding: 56px 24px 80px; }
+    @media (max-width: 768px) {
+      .legal-wrap { padding: 60px 24px 80px; }
+      .data-table { font-size: 0.78rem; }
+      .data-table th, .data-table td { padding: 8px 10px; }
     }
   </style>
 </head>
 <body class="page">
 
+  <!-- NAV -->
   <nav>
     <a href="index" class="nav-logo">
-      <img src="logo-transparent.png" alt="Keystone Lead Speed" />
+      <img src="Logo_no_wrd.png" alt="Keystone Lead Speed" />
     </a>
     <ul class="nav-links">
       <li><a href="index">Home</a></li>
@@ -92,79 +184,223 @@
     <a href="contact">Get Started →</a>
   </div>
 
-  <div class="legal-layout">
-    <p class="eyebrow">Legal</p>
-    <h1 class="heading-xl">Privacy <span class="accent">Policy</span></h1>
-    <p class="legal-updated">Last Updated: May 20, 2026</p>
+  <div class="legal-wrap">
 
-    <div class="legal-section">
-      <p>Keystone Lead Speed is committed to protecting the privacy of personal information collected through our platform and integrated web forms. This policy explains what we collect, how we use it, and your rights.</p>
+    <h1>Privacy Policy</h1>
+    <p class="legal-updated">Last updated: June 04, 2026</p>
+
+    <p>This Privacy Notice for <strong>Keystone Lead Speed</strong> ("we," "us," or "our") describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
+    <ul>
+      <li>Visit our website at <a href="https://keystoneleadspeed.com">keystoneleadspeed.com</a> or any website of ours that links to this Privacy Notice</li>
+      <li>Use Keystone Lead Speed — a B2B software service that automatically calls home service contractors when a homeowner submits a contact form on their website, bridging the contractor live to the homeowner within 30 seconds. Also sends SMS backup notifications with lead details. Service is provided via a JavaScript snippet installed on the contractor's website or via email forwarding integration.</li>
+      <li>Engage with us in other related ways, including any marketing or events</li>
+    </ul>
+    <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>.</p>
+
+    <div class="summary-box">
+      <h3>Summary of Key Points</h3>
+      <p><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use.</p>
+      <p><strong>Do we process any sensitive personal information?</strong> No. We do not process sensitive personal information.</p>
+      <p><strong>Do we collect any information from third parties?</strong> We may collect limited information from public databases and other outside sources.</p>
+      <p><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law.</p>
+      <p><strong>How do we keep your information safe?</strong> We have organizational and technical processes in place to protect your personal information. However, no electronic transmission over the internet can be guaranteed to be 100% secure.</p>
+      <p><strong>What are your rights?</strong> Depending on where you are located, the applicable privacy law may mean you have certain rights regarding your personal information.</p>
+      <p><strong>How do you exercise your rights?</strong> Visit <a href="https://keystoneleadspeed.com/contact">keystoneleadspeed.com/contact</a> or contact us directly. We will consider and act upon any request in accordance with applicable data protection laws.</p>
     </div>
 
-    <div class="legal-section">
-      <h2>1. Information We Collect</h2>
-      <p>We may collect personal information voluntarily submitted by users through contractor web forms integrated with our platform, including:</p>
-      <ul>
-        <li>First and last name</li>
-        <li>Email address</li>
-        <li>Mobile phone number</li>
-        <li>Project or service request details</li>
-      </ul>
-      <p>We may also collect registration and contact information from participating contractors using our services.</p>
+    <div class="toc">
+      <p>Table of Contents</p>
+      <ol>
+        <li><a href="#collect">What Information Do We Collect?</a></li>
+        <li><a href="#process">How Do We Process Your Information?</a></li>
+        <li><a href="#share">When and With Whom Do We Share Your Personal Information?</a></li>
+        <li><a href="#retain">How Long Do We Keep Your Information?</a></li>
+        <li><a href="#safe">How Do We Keep Your Information Safe?</a></li>
+        <li><a href="#minors">Do We Collect Information From Minors?</a></li>
+        <li><a href="#rights">What Are Your Privacy Rights?</a></li>
+        <li><a href="#dnt">Controls for Do-Not-Track Features</a></li>
+        <li><a href="#usrights">Do United States Residents Have Specific Privacy Rights?</a></li>
+        <li><a href="#updates">Do We Make Updates to This Notice?</a></li>
+        <li><a href="#contactus">How Can You Contact Us About This Notice?</a></li>
+        <li><a href="#delete">How Can You Review, Update, or Delete the Data We Collect From You?</a></li>
+      </ol>
     </div>
 
-    <div class="legal-section">
-      <h2>2. How Information Is Used</h2>
-      <p>Information collected through our platform is used solely to:</p>
-      <ul>
-        <li>Facilitate contractor lead notifications</li>
-        <li>Deliver automated call and SMS alerts</li>
-        <li>Improve lead response efficiency</li>
-        <li>Provide service-related communications</li>
-        <li>Maintain system security and reliability</li>
-      </ul>
-    </div>
+    <h2 id="collect">1. What Information Do We Collect?</h2>
+    <h3>Personal Information You Disclose to Us</h3>
+    <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us. The personal information we collect may include:</p>
+    <ul>
+      <li>Names</li>
+      <li>Phone numbers</li>
+      <li>Email addresses</li>
+      <li>Contact preferences</li>
+      <li>Billing addresses</li>
+    </ul>
+    <p><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+    <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+    <h3>Information Collected From Other Sources</h3>
+    <p>In order to enhance our ability to provide relevant services to you and update our records, we may obtain information about you from other sources, such as public databases, joint marketing partners, affiliate programs, data providers, and other third parties. This information may include email addresses, phone numbers, and other contact details for purposes of service delivery.</p>
 
-    <div class="legal-section">
-      <h2>3. Mobile Data and SMS Privacy</h2>
-      <p><strong>Mobile phone numbers, SMS consent data, and related messaging information will not be shared, sold, rented, or disclosed to third parties, affiliates, or marketing partners for promotional purposes.</strong></p>
-      <p>SMS and call data is used exclusively for operational communications directly related to contractor lead response services.</p>
-    </div>
+    <h2 id="process">2. How Do We Process Your Information?</h2>
+    <p>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</p>
+    <ul>
+      <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
+      <li><strong>To respond to user inquiries and offer support.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service.</li>
+      <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information.</li>
+      <li><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.</li>
+      <li><strong>To comply with our legal obligations.</strong> We may process your information to comply with our legal obligations, respond to legal requests, and exercise, establish, or defend our legal rights.</li>
+    </ul>
 
-    <div class="legal-section">
-      <h2>4. Consent to Communications</h2>
-      <p>By submitting a form through a website integrated with Keystone Lead Speed, users consent to receive communications related to their inquiry, including automated text messages and telephone calls where applicable.</p>
-    </div>
+    <h2 id="share">3. When and With Whom Do We Share Your Personal Information?</h2>
+    <p>We may share your data with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf and require access to such information to do that work. The third parties we share personal information with are:</p>
+    <ul>
+      <li><strong>Twilio</strong> — telecommunications and call bridging services</li>
+      <li><strong>SendGrid</strong> — email processing and inbound parse services</li>
+      <li><strong>Stripe</strong> — invoicing and billing services</li>
+    </ul>
+    <p>We may also share your personal information in connection with any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</p>
 
-    <div class="legal-section">
-      <h2>5. Message Frequency</h2>
-      <p>Message frequency varies depending on user activity, contractor workflows, and submitted service requests.</p>
-    </div>
+    <h2 id="retain">4. How Long Do We Keep Your Information?</h2>
+    <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law. No purpose in this notice will require us to keep your personal information for longer than 1 year after your account is closed or your service is terminated.</p>
+    <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or securely store your personal information and isolate it from any further processing until deletion is possible.</p>
 
-    <div class="legal-section">
-      <h2>6. Opt-Out Instructions</h2>
-      <p>Users may opt out of SMS communications at any time by replying <strong>STOP</strong> to any message received. For assistance, reply <strong>HELP</strong>.</p>
-    </div>
+    <h2 id="safe">5. How Do We Keep Your Information Safe?</h2>
+    <p>We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.</p>
 
-    <div class="legal-section">
-      <h2>7. Standard Messaging Disclosures</h2>
-      <p>Standard message and data rates may apply depending on your wireless carrier and mobile service plan.</p>
-    </div>
+    <h2 id="minors">6. Do We Collect Information From Minors?</h2>
+    <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age. By using the Services, you represent that you are at least 18 years of age. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>.</p>
 
-    <div class="legal-section">
-      <h2>8. Data Retention</h2>
-      <p>Keystone Lead Speed may temporarily retain limited lead information for operational reporting, analytics, fraud prevention, and service improvement purposes. Data is retained only for as long as reasonably necessary for legitimate business operations.</p>
-    </div>
+    <h2 id="rights">7. What Are Your Privacy Rights?</h2>
+    <p><strong>Withdrawing your consent:</strong> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time by contacting us using the contact details provided in this notice. Please note that this will not affect the lawfulness of the processing before its withdrawal.</p>
+    <p>If you have questions or comments about your privacy rights, you may email us at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>.</p>
 
-    <div class="legal-section">
-      <h2>9. Contact</h2>
-      <p>For questions regarding this Privacy Policy, contact us at <strong>keystoneleadspeed@gmail.com</strong></p>
-    </div>
+    <h2 id="dnt">8. Controls for Do-Not-Track Features</h2>
+    <p>Most web browsers and some mobile operating systems include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
+    <p>California law requires us to let you know how we respond to web browser DNT signals. Because there currently is not an industry or legal standard for recognizing or honoring DNT signals, we do not respond to them at this time.</p>
+
+    <h2 id="usrights">9. Do United States Residents Have Specific Privacy Rights?</h2>
+    <p>If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you, correct inaccuracies, get a copy of, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information.</p>
+
+    <h3>Categories of Personal Information We Collect</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Collected</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A. Identifiers</td>
+          <td>Name, email address, phone number, online identifier</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>B. Personal information as defined in the California Customer Records statute</td>
+          <td>Name, contact information, financial information</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>C. Protected classification characteristics</td>
+          <td>Gender, age, race, ethnicity, national origin</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>D. Commercial information</td>
+          <td>Transaction information, purchase history, financial details</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>E. Biometric information</td>
+          <td>Fingerprints and voiceprints</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>F. Internet or other similar network activity</td>
+          <td>Browsing history, search history, online behavior</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>G. Geolocation data</td>
+          <td>Device location</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>H. Audio, electronic, sensory, or similar information</td>
+          <td>Images, audio, video, or call recordings</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>I. Professional or employment-related information</td>
+          <td>Business contact details, job title, work history</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>J. Education information</td>
+          <td>Student records and directory information</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>K. Inferences drawn from collected personal information</td>
+          <td>Profiles or summaries about individual preferences</td>
+          <td class="no">No</td>
+        </tr>
+        <tr>
+          <td>L. Sensitive personal information</td>
+          <td></td>
+          <td class="no">No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We will use and retain the collected personal information as needed to provide the Services or for as long as the user has an active account with us.</p>
+
+    <h3>Your Rights</h3>
+    <p>You have rights under certain US state data protection laws, including:</p>
+    <ul>
+      <li>Right to know whether or not we are processing your personal data</li>
+      <li>Right to access your personal data</li>
+      <li>Right to correct inaccuracies in your personal data</li>
+      <li>Right to request the deletion of your personal data</li>
+      <li>Right to obtain a copy of the personal data you previously shared with us</li>
+      <li>Right to non-discrimination for exercising your rights</li>
+      <li>Right to opt out of the processing of your personal data if it is used for targeted advertising, the sale of personal data, or profiling</li>
+    </ul>
+
+    <h3>How to Exercise Your Rights</h3>
+    <p>To exercise these rights, you can contact us by visiting <a href="https://keystoneleadspeed.com/contact">keystoneleadspeed.com/contact</a>, by emailing us at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>, or by calling (814) 233-4870.</p>
+    <p>Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system.</p>
+
+    <h3>Appeals</h3>
+    <p>Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>. If your appeal is denied, you may submit a complaint to your state attorney general.</p>
+
+    <h3>California "Shine the Light" Law</h3>
+    <p>California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information we disclosed to third parties for direct marketing purposes. If you are a California resident and would like to make such a request, please contact us using the details provided below.</p>
+
+    <h2 id="updates">10. Do We Make Updates to This Notice?</h2>
+    <p>Yes, we will update this notice as necessary to stay compliant with relevant laws. We may update this Privacy Notice from time to time. The updated version will be indicated by an updated date at the top of this Privacy Notice. If we make material changes, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p>
+
+    <h2 id="contactus">11. How Can You Contact Us About This Notice?</h2>
+    <p>If you have questions or comments about this notice, you may contact our Data Protection Officer by email at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>, by phone at (814) 233-4870, or by mail at:</p>
+    <p>
+      <strong>Keystone Lead Speed</strong><br />
+      Data Protection Officer<br />
+      Johnstown, PA 15901<br />
+      United States
+    </p>
+
+    <h2 id="delete">12. How Can You Review, Update, or Delete the Data We Collect From You?</h2>
+    <p>Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. To request to review, update, or delete your personal information, please visit: <a href="https://keystoneleadspeed.com/contact">keystoneleadspeed.com/contact</a>.</p>
+
+    <p class="legal-footer-note">This Privacy Policy was generated with assistance from Termly's Privacy Policy Generator and customized for Keystone Lead Speed.</p>
+
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">Keystone Lead Speed &copy; 2025</div>
+      <div class="footer-brand">Keystone Lead Speed &copy; 2026</div>
       <ul class="footer-links">
         <li><a href="index">Home</a></li>
         <li><a href="pricing">Pricing</a></li>

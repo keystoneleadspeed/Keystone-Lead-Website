@@ -10,15 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── PRICING-SPECIFIC ───────────────────────────────── */
-
     .page-hero {
       max-width: var(--max);
       margin: 0 auto;
       padding: 80px 40px 60px;
       text-align: center;
     }
-
     .page-hero .eyebrow { margin-bottom: 12px; }
     .page-hero h1 { margin-bottom: 16px; }
     .page-hero .body-text {
@@ -26,14 +23,13 @@
       margin: 0 auto;
     }
 
-    /* tier grid */
     .tier-grid {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 40px 88px;
+      padding: 0 40px 100px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 28px;
       align-items: start;
     }
 
@@ -45,14 +41,11 @@
       transition: border-color 0.25s, transform 0.25s;
     }
 
-    .tier-card:hover { border-color: var(--card-bdr-hover); }
-
-    .tier-card.featured {
-      border-color: var(--blue);
-    }
+    .tier-card:hover { border-color: var(--card-bdr-hover); transform: translateY(-3px); }
+    .tier-card.featured { border-color: var(--blue); }
 
     .tier-header {
-      padding: 32px 32px 24px;
+      padding: 36px 36px 28px;
       border-bottom: 1px solid var(--faint);
     }
 
@@ -68,7 +61,7 @@
       border: 1px solid rgba(74,144,217,0.25);
       border-radius: 4px;
       padding: 4px 10px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .tier-badge.soon {
@@ -79,92 +72,56 @@
 
     .tier-name {
       font-family: var(--font-head);
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--white);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .tier-desc {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .tier-pricing {
-      padding: 24px 32px;
+      padding: 28px 36px;
       border-bottom: 1px solid var(--faint);
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .tier-price-block { display: flex; align-items: baseline; gap: 4px; }
-
-    .price-dollar {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      font-weight: 700;
+    .price-note {
+      font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1;
+      line-height: 1.65;
     }
 
-    .price-amount {
+    .price-note strong { color: var(--white); font-weight: 600; }
+
+    .price-tbd {
       font-family: var(--font-head);
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       font-weight: 900;
+      color: var(--muted);
       line-height: 1;
-      color: var(--white);
-    }
-
-    .price-period {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .price-divider {
-      width: 1px;
-      height: 44px;
-      background: var(--faint);
-    }
-
-    .setup-fee {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .setup-fee-amount {
-      font-family: var(--font-head);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .setup-fee-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
+      margin-bottom: 8px;
     }
 
     .tier-features {
-      padding: 28px 32px;
+      padding: 28px 36px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     .feature-row {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .feature-check {
@@ -174,115 +131,18 @@
       margin-top: 1px;
     }
 
-    .feature-row strong { color: var(--white); font-weight: 500; }
+    .feature-check.dim { color: var(--muted); }
+    .feature-row strong { color: var(--white); font-weight: 600; }
 
     .tier-footer {
-      padding: 24px 32px 32px;
+      padding: 8px 36px 36px;
     }
 
     .tier-footer .btn { width: 100%; }
 
-    /* coming soon overlay effect */
-    .tier-card.dimmed {
-      opacity: 0.65;
-      pointer-events: none;
-    }
-
-    /* ROI callout */
-    .roi-strip {
-      background: rgba(45,106,191,0.08);
-      border-top: 1px solid rgba(74,144,217,0.15);
-      border-bottom: 1px solid rgba(74,144,217,0.15);
-    }
-
-    .roi-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 56px 40px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(74,144,217,0.1);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .roi-item {
-      background: rgba(10,5,14,0.5);
-      padding: 32px 28px;
-      text-align: center;
-    }
-
-    .roi-num {
-      font-family: var(--font-head);
-      font-size: 2.6rem;
-      font-weight: 900;
-      color: var(--blue-lt);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .roi-label {
-      font-family: var(--font-head);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .roi-note {
-      font-size: 0.82rem;
-      color: rgba(138,154,170,0.65);
-      line-height: 1.5;
-    }
-
-    /* FAQ section */
-    .faq-grid {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 88px 40px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .faq-item {
-      background: var(--card-bg);
-      border: 1px solid var(--card-bdr);
-      border-radius: var(--radius);
-      padding: 24px 26px;
-    }
-
-    .faq-q {
-      font-family: var(--font-head);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-
-    .faq-a {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .faq-header {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
     @media (max-width: 768px) {
-      .tier-grid { grid-template-columns: 1fr; padding: 0 24px 64px; }
-      .roi-inner { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; padding: 64px 24px; }
+      .tier-grid { grid-template-columns: 1fr; padding: 0 24px 72px; }
       .page-hero { padding: 64px 24px 44px; }
-      .faq-header { padding: 0 24px; }
     }
   </style>
 </head>
@@ -291,7 +151,7 @@
   <!-- NAV -->
   <nav>
     <a href="index" class="nav-logo">
-      <img src="logo.png" alt="Keystone Lead Speed" />
+      <img src="Logo_no_wrd.png" alt="Keystone Lead Speed" />
     </a>
     <ul class="nav-links">
       <li><a href="index">Home</a></li>
@@ -313,41 +173,32 @@
 
   <!-- PAGE HERO -->
   <div class="page-hero">
-    <p class="eyebrow">Simple, Honest Pricing</p>
-    <h1 class="heading-xl">One Job Pays For <span class="accent">The Whole Year.</span></h1>
-    <p class="body-text">No contracts. No hidden fees. No platforms to manage. Cancel any time.</p>
+    <p class="eyebrow">Pricing</p>
+    <h1 class="heading-xl">Simple. <span class="accent">Honest.</span> No Surprises.</h1>
+    <p class="body-text">No contracts. No hidden fees. Cancel any time. We'd rather keep you because the service works.</p>
   </div>
 
   <!-- TIER GRID -->
   <div class="tier-grid">
 
-    <!-- MVP Tier -->
+    <!-- Card 1 — Contact for Pricing -->
     <div class="tier-card featured">
       <div class="tier-header">
         <div class="tier-badge">Now Available</div>
         <div class="tier-name">Core</div>
-        <p class="tier-desc">Everything you need to stop losing leads to slow response. Fully managed, zero setup headache.</p>
+        <p class="tier-desc">Everything you need to stop losing leads to slow response. Fully managed, no software to install, no learning curve.</p>
       </div>
       <div class="tier-pricing">
-        <div class="tier-price-block">
-          <span class="price-dollar">$</span>
-          <span class="price-amount">250</span>
-          <span class="price-period">/mo</span>
-        </div>
-        <div class="price-divider"></div>
-        <div class="setup-fee">
-          <span class="setup-fee-amount">$300</span>
-          <span class="setup-fee-label">one-time setup fee</span>
-        </div>
+        <p class="price-note">Pricing is discussed directly — every business is different and we price accordingly. <strong>Most contractors pay under $300/month.</strong> Contact us and we'll give you a straight number based on your setup.</p>
       </div>
       <div class="tier-features">
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>Instant outbound call</strong> — triggered within 30 seconds of form submission</span>
+          <span><strong>Instant outbound call</strong> — your phone rings within 30 seconds of a form submission</span>
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>Live call bridge</strong> — press 1 and you're connected to the homeowner</span>
+          <span><strong>Live call bridge</strong> — press 1 and you're connected directly to the homeowner</span>
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
@@ -355,139 +206,68 @@
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>Full activity logging</strong> — every lead, every call outcome tracked</span>
+          <span><strong>Works with any existing website</strong> — WordPress, Wix, Squarespace, custom</span>
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>Email reporting</strong> — success and failure alerts sent directly to you</span>
+          <span><strong>No software to install or learn</strong> — we handle setup completely</span>
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>We handle setup completely</strong> — no software to install or configure</span>
+          <span><strong>24/7 human support</strong> — direct access, not a ticket system or chatbot</span>
         </div>
         <div class="feature-row">
           <span class="feature-check">✓</span>
-          <span><strong>24/7 human support</strong> — direct access, not a ticket system</span>
-        </div>
-        <div class="feature-row">
-          <span class="feature-check">✓</span>
-          <span><strong>Works on any website</strong> — WordPress, Wix, Squarespace, custom</span>
+          <span><strong>We don't retain customer data</strong> — lead info passes through to connect the call and is gone</span>
         </div>
       </div>
       <div class="tier-footer">
-        <a href="contact" class="btn btn-primary">Start Free Trial</a>
+        <a href="contact" class="btn btn-primary">Contact Us for Pricing</a>
       </div>
     </div>
 
-    <!-- Tier 2 Coming Soon -->
-    <div class="tier-card dimmed">
+    <!-- Card 2 — Coming Soon -->
+    <div class="tier-card">
       <div class="tier-header">
         <div class="tier-badge soon">Coming Soon</div>
         <div class="tier-name">Pro</div>
-        <p class="tier-desc">Advanced routing, automation, and intelligence for growing operations.</p>
+        <p class="tier-desc">Advanced automation and tools for contractors who want more control and more coverage.</p>
       </div>
       <div class="tier-pricing">
-        <div class="tier-price-block">
-          <span class="price-dollar" style="color:var(--muted)">$</span>
-          <span class="price-amount" style="color:var(--muted)">TBD</span>
-          <span class="price-period">/mo</span>
-        </div>
+        <div class="price-tbd">TBD</div>
+        <p class="price-note">Pricing not yet set. Contact us if you want early access when it launches.</p>
       </div>
       <div class="tier-features">
         <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
+          <span class="feature-check dim">✓</span>
           <span>Everything in Core</span>
         </div>
         <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>Missed call retry intervals</span>
+          <span class="feature-check dim">✓</span>
+          <span>Retry logic for missed calls</span>
         </div>
         <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>After-hours call handling</span>
+          <span class="feature-check dim">✓</span>
+          <span>After hours call handling</span>
         </div>
         <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>Phone number rotation for crews</span>
-        </div>
-        <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>AI-powered 24/7 call response</span>
-        </div>
-        <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>Customizable call scripts and flows</span>
-        </div>
-        <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
-          <span>Login dashboard with reporting</span>
-        </div>
-        <div class="feature-row">
-          <span class="feature-check" style="color:var(--muted)">✓</span>
+          <span class="feature-check dim">✓</span>
           <span>Automated Google review requests</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-check dim">✓</span>
+          <span>Multi-location contractor support</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-check dim">✓</span>
+          <span>Admin dashboard with reporting</span>
         </div>
       </div>
       <div class="tier-footer">
-        <a href="contact" class="btn btn-outline" style="pointer-events:none; opacity:0.5;">Notify Me</a>
+        <a href="contact" class="btn btn-outline">Get Notified</a>
       </div>
     </div>
 
-  </div>
-
-  <hr class="section-rule" />
-
-  <!-- ROI STRIP -->
-  <div class="roi-strip">
-    <div class="roi-inner">
-      <div class="roi-item">
-        <div class="roi-num">$3,000</div>
-        <div class="roi-label">Annual Cost</div>
-        <div class="roi-note">Full year of Core service at $250/mo</div>
-      </div>
-      <div class="roi-item">
-        <div class="roi-num">$8–15k</div>
-        <div class="roi-label">Avg Roof Replacement</div>
-        <div class="roi-note">One job closed pays for the year and then some</div>
-      </div>
-      <div class="roi-item">
-        <div class="roi-num">78%</div>
-        <div class="roi-label">First Responder Wins</div>
-        <div class="roi-note">Of jobs go to the first contractor to call back</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div class="faq-header">
-    <p class="eyebrow" style="margin-top: 88px;">Common Questions</p>
-    <h2 class="heading-lg" style="margin-bottom: 8px;">Straight <span class="accent">Answers.</span></h2>
-  </div>
-
-  <div class="faq-grid">
-    <div class="faq-item">
-      <p class="faq-q">Do I need to install anything?</p>
-      <p class="faq-a">No. We handle the entire setup on our end. You don't touch your website, install software, or learn a new platform. We get you connected and test it before going live.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">What if I miss the call?</p>
-      <p class="faq-a">You'll receive an SMS immediately with the homeowner's full contact information. One tap calls them back. You're still faster than 99% of your competition.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Does it work with my website?</p>
-      <p class="faq-a">Yes. We integrate with WordPress, Wix, Squarespace, Webflow, and custom-built sites. If your site has a contact or estimate form, we can connect to it.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Is there a contract?</p>
-      <p class="faq-a">No contracts. Month to month. Cancel any time. We'd rather keep you because the service works than lock you into something you don't love.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">What does the free trial include?</p>
-      <p class="faq-a">Your first month is completely free with no setup charge. Full Core service, fully operational. We want you to see results before you spend a dollar.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">How fast is the response really?</p>
-      <p class="faq-a">Under 30 seconds in all tested conditions. In most cases it's significantly faster — your phone rings before the homeowner's form confirmation email has even sent.</p>
-    </div>
   </div>
 
   <!-- FOOTER -->

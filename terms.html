@@ -4,75 +4,129 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms & Conditions — Keystone Lead Speed</title>
+  <title>Terms of Service — Keystone Lead Speed</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .legal-layout {
-      max-width: 760px;
+    .legal-wrap {
+      max-width: 860px;
       margin: 0 auto;
-      padding: 72px 40px 100px;
+      padding: 80px 40px 100px;
     }
-    .legal-layout .eyebrow { margin-bottom: 12px; }
-    .legal-layout h1 { margin-bottom: 8px; }
+    .legal-wrap h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
     .legal-updated {
-      font-size: 0.8rem;
-      color: rgba(154,170,187,0.5);
-      margin-bottom: 56px;
-      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 48px;
     }
-    .legal-section { margin-bottom: 40px; }
-    .legal-section h2 {
+    .legal-wrap h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin: 40px 0 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .legal-wrap h3 {
       font-family: var(--font-head);
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.05em;
       color: var(--blue-lt);
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--faint);
+      margin: 24px 0 8px;
     }
-    .legal-section p {
+    .legal-wrap p {
       font-size: 0.92rem;
       color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 12px;
+      line-height: 1.78;
+      margin-bottom: 16px;
     }
-    .legal-section p strong { color: var(--white); font-weight: 600; }
-    .legal-section ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin: 12px 0;
+    .legal-wrap ul {
+      margin: 0 0 16px 0;
+      padding-left: 24px;
     }
-    .legal-section ul li {
+    .legal-wrap ul li {
       font-size: 0.92rem;
       color: var(--muted);
-      line-height: 1.6;
-      padding-left: 16px;
-      position: relative;
+      line-height: 1.78;
+      margin-bottom: 8px;
     }
-    .legal-section ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
+    .legal-wrap a {
       color: var(--blue-lt);
-      font-size: 0.8rem;
+      text-decoration: underline;
     }
-    @media (max-width: 640px) {
-      .legal-layout { padding: 56px 24px 80px; }
+    .legal-wrap strong { color: var(--white); }
+    .legal-caps {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.72;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .toc {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc p {
+      font-family: var(--font-head);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .toc ol li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .toc ol li a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--blue-lt); }
+    .legal-footer-note {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.78rem;
+      color: rgba(154,170,187,0.35);
+      font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .legal-wrap { padding: 60px 24px 80px; }
     }
   </style>
 </head>
 <body class="page">
 
+  <!-- NAV -->
   <nav>
     <a href="index" class="nav-logo">
-      <img src="logo-transparent.png" alt="Keystone Lead Speed" />
+      <img src="Logo_no_wrd.png" alt="Keystone Lead Speed" />
     </a>
     <ul class="nav-links">
       <li><a href="index">Home</a></li>
@@ -92,71 +146,151 @@
     <a href="contact">Get Started →</a>
   </div>
 
-  <div class="legal-layout">
-    <p class="eyebrow">Legal</p>
-    <h1 class="heading-xl">Terms & <span class="accent">Conditions</span></h1>
-    <p class="legal-updated">Last Updated: May 20, 2026</p>
+  <div class="legal-wrap">
 
-    <div class="legal-section">
-      <h2>1. Description of Service</h2>
-      <p>Keystone Lead Speed provides automated lead-response communication services for contractors and home-service businesses. Services may include:</p>
-      <ul>
-        <li>Automated SMS notifications</li>
-        <li>Telephone call routing and alerts</li>
-        <li>Lead-response automation workflows</li>
-        <li>Operational notification systems</li>
-      </ul>
+    <h1>Terms of Service</h1>
+    <p class="legal-updated">Last updated: June 4, 2026</p>
+
+    <h2>Agreement to Our Legal Terms</h2>
+    <p>We are <strong>Keystone Lead Speed</strong> ("Company," "we," "us," "our"), operated by Michael Mabon, Johnstown, Pennsylvania.</p>
+    <p>We operate <a href="https://keystoneleadspeed.com">keystoneleadspeed.com</a>, as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
+    <p>You can contact us by email at <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a> or by phone at (814) 233-4870.</p>
+    <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Keystone Lead Speed, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. <strong>IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</strong></p>
+    <p>Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.</p>
+    <p>We recommend that you print a copy of these Legal Terms for your records.</p>
+
+    <div class="toc">
+      <p>Table of Contents</p>
+      <ol>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#ip">Intellectual Property Rights</a></li>
+        <li><a href="#representations">User Representations</a></li>
+        <li><a href="#prohibited">Prohibited Activities</a></li>
+        <li><a href="#ugc">User Generated Contributions</a></li>
+        <li><a href="#license">Contribution License</a></li>
+        <li><a href="#management">Services Management</a></li>
+        <li><a href="#termination">Term and Termination</a></li>
+        <li><a href="#modifications">Modifications and Interruptions</a></li>
+        <li><a href="#governing">Governing Law</a></li>
+        <li><a href="#disputes">Dispute Resolution</a></li>
+        <li><a href="#corrections">Corrections</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#liability">Limitations of Liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#userdata">User Data</a></li>
+        <li><a href="#electronic">Electronic Communications, Transactions, and Signatures</a></li>
+        <li><a href="#misc">Miscellaneous</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
     </div>
 
-    <div class="legal-section">
-      <h2>2. Consent to Communications</h2>
-      <p>By submitting a form through a website integrated with Keystone Lead Speed or by registering a mobile phone number with our platform, you consent to receive communications related to your request or account, including automated text messages and telephone calls where applicable.</p>
-    </div>
+    <h2 id="services">1. Our Services</h2>
+    <p>The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.</p>
 
-    <div class="legal-section">
-      <h2>3. Message Frequency</h2>
-      <p>Message frequency varies depending on submitted requests, contractor activity, and platform usage.</p>
-    </div>
+    <h2 id="ip">2. Intellectual Property Rights</h2>
+    <h3>Our Intellectual Property</h3>
+    <p>We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").</p>
+    <p>Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) and treaties around the world.</p>
+    <p>The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.</p>
+    <h3>Your Use of Our Services</h3>
+    <p>Subject to your compliance with these Legal Terms, including the "PROHIBITED ACTIVITIES" section below, we grant you a non-exclusive, non-transferable, revocable license to access the Services and download or print a copy of any portion of the Content to which you have properly gained access, solely for your personal, non-commercial use or internal business purpose.</p>
+    <p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
+    <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section, please address your request to: <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a>. We reserve all rights not expressly granted to you in and to the Services, Content, and Marks. Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
+    <h3>Your Submissions</h3>
+    <p>By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ("Submissions"), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you.</p>
+    <p>You are responsible for what you submit. By sending us Submissions you confirm that you have read and agree with our "PROHIBITED ACTIVITIES," waive any moral rights to such Submission, warrant that such Submission is original to you or that you have the necessary rights to submit it, and warrant that your Submissions do not constitute confidential information. You are solely responsible for your Submissions.</p>
 
-    <div class="legal-section">
-      <h2>4. Opt-Out and Support</h2>
-      <p>You may opt out of SMS communications at any time by replying <strong>STOP</strong> to any message. For assistance or support information, reply <strong>HELP</strong>.</p>
-    </div>
+    <h2 id="representations">3. User Representations</h2>
+    <p>By using the Services, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Legal Terms; (2) you are not a minor in the jurisdiction in which you reside; (3) you will not access the Services through automated or non-human means, whether through a bot, script or otherwise; (4) you will not use the Services for any illegal or unauthorized purpose; and (5) your use of the Services will not violate any applicable law or regulation.</p>
+    <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Services.</p>
 
-    <div class="legal-section">
-      <h2>5. Carrier Disclosures</h2>
-      <p>Standard message and data rates may apply depending on your wireless carrier and mobile service plan. Wireless carriers are not liable for delayed or undelivered messages.</p>
-    </div>
+    <h2 id="prohibited">4. Prohibited Activities</h2>
+    <p>You may not access or use the Services for any purpose other than that for which we make the Services available. As a user of the Services, you agree not to:</p>
+    <ul>
+      <li>Systematically retrieve data or other content from the Services to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
+      <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information.</li>
+      <li>Circumvent, disable, or otherwise interfere with security-related features of the Services.</li>
+      <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Services.</li>
+      <li>Use any information obtained from the Services in order to harass, abuse, or harm another person.</li>
+      <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+      <li>Use the Services in a manner inconsistent with any applicable laws or regulations.</li>
+      <li>Upload or transmit viruses, Trojan horses, or other material that interferes with any party's uninterrupted use and enjoyment of the Services.</li>
+      <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</li>
+      <li>Attempt to impersonate another user or person or use the username of another user.</li>
+      <li>Interfere with, disrupt, or create an undue burden on the Services or the networks or services connected to the Services.</li>
+      <li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Services to you.</li>
+      <li>Except as permitted by applicable law, decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Services.</li>
+      <li>Use the Services as part of any effort to compete with us or otherwise use the Services and/or the Content for any revenue-generating endeavor or commercial enterprise without our express written permission.</li>
+    </ul>
 
-    <div class="legal-section">
-      <h2>6. Acceptable Use</h2>
-      <p>Users may not misuse the platform, submit fraudulent requests, interfere with platform operations, or attempt unauthorized access to Keystone Lead Speed systems.</p>
-    </div>
+    <h2 id="ugc">5. User Generated Contributions</h2>
+    <p>The Services do not offer users the ability to submit or post content. We do not host, store, or publish user-generated content of any kind on our platform.</p>
 
-    <div class="legal-section">
-      <h2>7. Service Availability</h2>
-      <p>Keystone Lead Speed strives to maintain reliable service availability but does not guarantee uninterrupted operation or error-free performance.</p>
-    </div>
+    <h2 id="license">6. Contribution License</h2>
+    <p>You and the Services agree that we may access, store, process, and use any information and personal data that you provide and your choices (including settings). By submitting suggestions or other feedback regarding the Services, you agree that we can use and share such feedback for any purpose without compensation to you. We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights or other proprietary rights associated with your Contributions.</p>
 
-    <div class="legal-section">
-      <h2>8. Limitation of Liability</h2>
-      <p>Keystone Lead Speed shall not be held liable for indirect, incidental, or consequential damages arising from the use of the platform, communication delays, carrier failures, or third-party service interruptions.</p>
-    </div>
+    <h2 id="management">7. Services Management</h2>
+    <p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms; (3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable any of your access or any portion thereof; and (4) otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</p>
 
-    <div class="legal-section">
-      <h2>9. Modifications</h2>
-      <p>Keystone Lead Speed reserves the right to update or modify these terms at any time without prior notice.</p>
-    </div>
+    <h2 id="termination">8. Term and Termination</h2>
+    <p>These Legal Terms shall remain in full force and effect while you use the Services. <strong>WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES TO ANY PERSON FOR ANY REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR REGULATION.</strong></p>
+    <p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</p>
 
-    <div class="legal-section">
-      <h2>10. Contact</h2>
-      <p>For questions regarding these Terms and Conditions, contact us at <strong>keystoneleadspeed@gmail.com</strong></p>
-    </div>
+    <h2 id="modifications">9. Modifications and Interruptions</h2>
+    <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime or discontinuance of the Services.</p>
+
+    <h2 id="governing">10. Governing Law</h2>
+    <p>These Legal Terms shall be governed by and defined following the laws of the Commonwealth of Pennsylvania. Keystone Lead Speed and yourself irrevocably consent that the courts of Cambria County, Pennsylvania shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these Legal Terms.</p>
+
+    <h2 id="disputes">11. Dispute Resolution</h2>
+    <h3>Informal Negotiations</h3>
+    <p>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms, the parties agree to first attempt to negotiate any dispute informally for at least 30 days before initiating arbitration. Such informal negotiations commence upon written notice from one party to the other party.</p>
+    <h3>Binding Arbitration</h3>
+    <p>Any dispute arising out of or in connection with these Legal Terms that cannot be resolved through informal negotiation shall be referred to and finally resolved by binding arbitration in Cambria County, Pennsylvania, in accordance with the rules of the American Arbitration Association. The number of arbitrators shall be one. The governing law shall be the substantive law of the Commonwealth of Pennsylvania. The language of the proceedings shall be English.</p>
+    <h3>Restrictions</h3>
+    <p>The parties agree that any arbitration shall be limited to the dispute between the parties individually. To the full extent permitted by law, no arbitration shall be joined with any other proceeding, there is no right or authority for any dispute to be arbitrated on a class-action basis, and there is no right or authority for any dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
+    <h3>Exceptions to Informal Negotiations and Arbitration</h3>
+    <p>The parties agree that the following disputes are not subject to the above provisions: (a) any disputes seeking to enforce or protect, or concerning the validity of, any intellectual property rights of a party; (b) any dispute related to allegations of theft, piracy, invasion of privacy, or unauthorized use; and (c) any claim for injunctive relief.</p>
+
+    <h2 id="corrections">12. Corrections</h2>
+    <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
+
+    <h2 id="disclaimer">13. Disclaimer</h2>
+    <p class="legal-caps">The services are provided on an as-is and as-available basis. You agree that your use of the services will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the services and your use thereof, including, without limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the services' content and we will assume no liability or responsibility for any errors, mistakes, or inaccuracies of content and materials, any unauthorized access to or use of our secure servers, any interruption or cessation of transmission to or from the services, or any bugs, viruses, trojan horses, or the like which may be transmitted to or through the services by any third party.</p>
+
+    <h2 id="liability">14. Limitations of Liability</h2>
+    <p class="legal-caps">In no event will we or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, or other damages arising from your use of the services, even if we have been advised of the possibility of such damages. Notwithstanding anything to the contrary contained herein, our liability to you for any cause whatsoever and regardless of the form of the action, will at all times be limited to the amount paid, if any, by you to us in the twelve (12) months preceding the claim. Certain US state laws and international laws do not allow limitations on implied warranties or the exclusion or limitation of certain damages. If these laws apply to you, some or all of the above disclaimers or limitations may not apply to you, and you may have additional rights.</p>
+
+    <h2 id="indemnification">15. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services.</p>
+
+    <h2 id="userdata">16. User Data</h2>
+    <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</p>
+
+    <h2 id="electronic">17. Electronic Communications, Transactions, and Signatures</h2>
+    <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. <strong>YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES.</strong> You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</p>
+
+    <h2 id="misc">18. Miscellaneous</h2>
+    <p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services.</p>
+
+    <h2 id="contact">19. Contact Us</h2>
+    <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
+    <p>
+      <strong>Keystone Lead Speed</strong><br />
+      Operated by Michael Mabon<br />
+      Johnstown, Pennsylvania<br />
+      Email: <a href="mailto:keystoneleadspeed@gmail.com">keystoneleadspeed@gmail.com</a><br />
+      Phone: (814) 233-4870
+    </p>
+
+    <p class="legal-footer-note">These Terms of Service were generated with assistance from Termly's Terms and Conditions Generator and customized for Keystone Lead Speed.</p>
+
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">Keystone Lead Speed &copy; 2025</div>
+      <div class="footer-brand">Keystone Lead Speed &copy; 2026</div>
       <ul class="footer-links">
         <li><a href="index">Home</a></li>
         <li><a href="pricing">Pricing</a></li>
