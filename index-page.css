@@ -424,7 +424,7 @@
 }
 
 .test-stars {
-  color: var(--blue-lt);
+  color: #f5c518;
   font-size: 0.95rem;
   margin-bottom: 14px;
   letter-spacing: 3px;
