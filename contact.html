@@ -243,7 +243,7 @@
         <h2>Tell Us About Your Business</h2>
       </div>
 
-      <div id="formBody" class="form-body">
+      <form id="formBody" class="form-body">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -305,12 +305,10 @@
         </div>
 
         <div class="form-submit">
-          <button type="button" class="btn btn-primary" id="submitBtn">Request Free Trial</button>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Request Free Trial</button>
           <p class="form-note">By submitting you agree to be contacted about your trial request. No spam, ever. View our <a href="privacy" style="color: var(--blue-lt);">Privacy Policy</a>.</p>
         </div>
-      </div>
-
-      <!-- SUCCESS STATE -->
+      </form>
       <div id="formSuccess" class="form-success">
         <div class="success-icon">✓</div>
         <h3>Request Received</h3>
@@ -337,12 +335,26 @@
   </footer>
 
   <script src="nav.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Keystone Lead Speed JS Listener — uncomment and update URL when Flask is live on VPS -->
+  <script src="https://keystoneleadspeed.com/static/generic_listener.js?url=https://keystoneleadspeed.com/webhook&company_id=keystone_roofing"></script>
+
   <script>
-    // Basic form submit handler
-    document.getElementById('submitBtn').addEventListener('click', () => {
+    const EMAILJS_SERVICE_ID  = 'service_8z4mu34';
+    const EMAILJS_TEMPLATE_ID = 'template_8cf5egz';
+    const EMAILJS_PUBLIC_KEY  = 'viQmeB7TdmE8Tng2H';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    document.getElementById('formBody').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate required fields
       const required = ['firstName', 'lastName', 'businessName', 'phone', 'website'];
       let allFilled = true;
-
       required.forEach(id => {
         const el = document.getElementById(id);
         if (!el.value.trim()) {
@@ -352,11 +364,13 @@
           el.style.borderColor = '';
         }
       });
-
       if (!allFilled) return;
 
-      // Collect data
-      const formData = {
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const templateParams = {
         firstName:    document.getElementById('firstName').value,
         lastName:     document.getElementById('lastName').value,
         businessName: document.getElementById('businessName').value,
@@ -367,12 +381,17 @@
         trade:        document.getElementById('trade').value,
       };
 
-      // TODO: wire to your backend or email service
-      console.log('Trial request:', formData);
-
-      // Show success
-      document.getElementById('formBody').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('visible');
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(function() {
+          document.getElementById('formBody').style.display = 'none';
+          document.getElementById('formSuccess').classList.add('visible');
+        })
+        .catch(function(err) {
+          console.error('EmailJS error:', err);
+          btn.textContent = 'Request Free Trial';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us directly at keystoneleadspeed@gmail.com');
+        });
     });
   </script>
 </body>
